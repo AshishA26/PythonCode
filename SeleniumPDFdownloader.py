@@ -1,3 +1,5 @@
+#***TESTED ON UBUNTU 18*******
+
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
@@ -13,7 +15,7 @@ options.headless=False
 #driver = webdriver.Firefox(options= options)
 
 
-# fp = webdriver.FirefoxProfile('/home/na/.mozilla/firefox/9tn0o76g.default-release')
+# fp = webdriver.FirefoxProfile('/home/USER/.mozilla/firefox/9tn0o76g.default-release')
 # fp.set_preference("browser.download.folderList",2)
 # fp.set_preference("browser.download.dir", os.getcwd())
 # driver = webdriver.Firefox(firefox_profile=fp)
@@ -21,7 +23,8 @@ options.headless=False
 profile = webdriver.FirefoxProfile()
 profile.set_preference("browser.download.folderList", 2)
 profile.set_preference("browser.download.manager.showWhenStarting", False)
-profile.set_preference("browser.download.dir", "/home/na/Downloads/Altima")
+# ENTER DOWNLOAD PATH HERE:
+profile.set_preference("browser.download.dir", "/home/USER/Downloads/")
 profile.set_preference("browser.helperApps.neverAsk.saveToDisk", "application/pdf")
 
 profile.set_preference("pdfjs.disabled", True)
@@ -33,12 +36,12 @@ driver.maximize_window()
 time.sleep(0)
 
 for i in range(1,56): 
-    #https://www.nicoclub.com/archives/nissan-altima-factory-service-manuals.html
-    driver.get("https://www.nicoclub.com/nissan-service-manuals")
+    #Replace link below with your own link
+    driver.get("INSERT LINK HERE")
+    
+    #Replace the paths below in quotations with the xpaths of where to click
     driver.find_element_by_xpath('/html/body/div/div[1]/div/main/article/div/div/div/div[6]/div[1]').click() 
-    #driver.execute_script("window.scrollTo(7,document.body.scrollHeight)")
     driver.find_element_by_xpath('/html/body/div/div[1]/div/main/article/div/div/div/div[6]/ul/li[24]/div').click() 
     driver.find_element_by_xpath(f'/html/body/div/div[1]/div/main/article/div/div/div/div[6]/ul/li[24]/ul/li[{i}]/a').click()
     driver.find_element_by_xpath('/html/body/div/div[1]/div/main/article/div/div/div/p[1]/a').click()
-#https://www.nicoclub.com/archives/nissan-altima-factory-service-manuals.html
 #https://stackoverflow.com/questions/23800195/auto-download-pdf-in-firefox
