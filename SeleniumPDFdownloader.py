@@ -36,8 +36,8 @@ driver.maximize_window()
 time.sleep(0)
 
 for i in range(1,56): 
-    #Replace link below with your own link
-    driver.get("INSERT LINK HERE")
+    #Insert your own URL
+    driver.get("INSERT URL HERE")
     
     #Replace the paths below in quotations with the xpaths of where to click
     driver.find_element_by_xpath('/html/body/div/div[1]/div/main/article/div/div/div/div[6]/div[1]').click() 
